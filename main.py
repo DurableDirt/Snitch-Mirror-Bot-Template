@@ -1,5 +1,5 @@
 # Snitch Mirror Discord Bot
-# This simple bot script will mirror snitch messages from one channel to another, rounding coordinates to the nearest 20th for security. Feel free to incorporate this with our Global Snitch Network bot!
+# This simple bot script will mirror snitch messages from one channel to another, rounding coordinates to the nearest 50th for security. Feel free to incorporate this with our Argus bot!
 
 import re
 import asyncio
@@ -38,7 +38,7 @@ SNITCH_MIRROR_MAP = {
 MIRROR_QUEUES:        dict[int, list] = {}
 MIRROR_TASKS:         dict[int, asyncio.Task] = {}
 
-def fuzz_coordinates(content: str, radius: int = 20) -> str:
+def fuzz_coordinates(content: str, radius: int = 50) -> str:
     def replace_coord(m):
         try:
             x = round(int(m.group(1)) / radius) * radius
