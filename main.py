@@ -83,7 +83,7 @@ async def queue_mirror_message(channel_id: int, content: str):
 
 @bot.event
 async def on_message(message):
-    if message.channel.id in (SNITCH_CHANNEL_ID, MIRROR_BORDERSNITCH_CHANNEL_ID):
+    if message.channel.id in (SNITCH_CHANNEL_ID, BORDER_SNITCH_CHANNEL_ID):
         content = message.content
 
         mirror_channel_id = SNITCH_MIRROR_MAP.get(message.channel.id)
